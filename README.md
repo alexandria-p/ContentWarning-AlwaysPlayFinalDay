@@ -1,8 +1,14 @@
 # Always Play Final Day - Mod for Content Warning
 
-Allow crew to view their camera footage on the final day if they lost their camera underground, even if the footage won't meet quota (turned **on** by default).
+Allow crew to play the final evening, even if they will not meet quota.
 
-- *The base game will end the third day immediately, if it detects quota has not been met.*
+This is useful in Vanilla if the camera was still in the diving bell when all players died, and you'd still like to see what was on it.
+
+It is also used by my other mod (KeepCameraAfterDeath) to ensure the crew can watch their final day of footage, even if they lose their camera underground and aren't going to meet quota.
+
+When you go to sleep at the end of the final day, the regular Game Over sequence will play.
+
+- *The base game will end the third day immediately, if there is no returning player holding the camera and it detects quota has not been met.*
 - *This feature can be toggled on or off in the game menu, in case it interacts with other mods.*
 
 ### Changelog
