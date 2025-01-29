@@ -15,7 +15,7 @@ namespace AlwaysPlayFinalDay;
 [BepInPlugin(MyPluginInfo.PLUGIN_GUID, MyPluginInfo.PLUGIN_NAME, MyPluginInfo.PLUGIN_VERSION)]
 public class FixR2Modman : BaseUnityPlugin
 {
-    const uint myceliumNetworkModId = 61813; // meaningless, as long as it is the same between all the clients
+    //const uint myceliumNetworkModId = 61813; // meaningless, as long as it is the same between all the clients
     internal new static ManualLogSource Logger { get; private set; } = null!;
 
     private void Awake()
@@ -41,9 +41,9 @@ public class AlwaysPlayFinalDay : MonoBehaviour // prev. BaseUnityPlugin
 {
     // Actual mod logic
 
-    const uint myceliumNetworkModId = 61812; // meaningless, as long as it is the same between all the clients
+    const uint myceliumNetworkModId = 61813; // meaningless, as long as it is the same between all the clients
     public static AlwaysPlayFinalDay Instance { get; private set; } = null!;
-    internal new static ManualLogSource Logger { get; private set; } = null!;
+    internal static ManualLogSource Logger { get; private set; } = null!;
 
     public bool PlayFinalDayEvenIfQuotaNotMet { get; private set; }
 
@@ -106,7 +106,7 @@ public class AlwaysPlayFinalDay : MonoBehaviour // prev. BaseUnityPlugin
         {
             AlwaysPlayFinalDay.Instance.SetPlayFinalDayEvenIfQuotaNotMet(Value);
         }
-        //[Warning: Unity Log] Failed to load setting of type AlwaysPlayFinalDay.AlwaysPlayFinalDay+EnableAllowCrewToWatchFootageEvenIfQuotaNotMetSetting from PlayerPrefs.
+       
         public string GetDisplayName() => "AlwaysPlayFinalDay: Allow crew to view their camera footage on final day, even if the footage won't reach quota (uses the host's game settings) \nWithout this setting, the third day ends immediately.";
 
         protected override bool GetDefaultValue() => true;

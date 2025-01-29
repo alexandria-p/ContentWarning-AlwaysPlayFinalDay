@@ -42,9 +42,6 @@ public class SurfaceNetworkHandlerPatch
     // The game tries to jump straight to 'Sleeping', runs _NextDay (this method) and immediately game overs players (without letting them watch their last video)
     private static void SurfaceNetworkHandler_NextDay(On.SurfaceNetworkHandler.orig_NextDay orig, SurfaceNetworkHandler self)
     {
-        AlwaysPlayFinalDay.Logger.LogInfo("AlwaysPlayFinalDay: next day");
-        AlwaysPlayFinalDay.Logger.LogInfo("AlwaysPlayFinalDay setting: "+ AlwaysPlayFinalDay.Instance.PlayFinalDayEvenIfQuotaNotMet.ToString());
-
         // Do not run NextDay if quota not met on final day DURING InitSurface (as this ends the run immediately)
         if (MyceliumNetwork.IsHost
             && AlwaysPlayFinalDay.Instance.PlayFinalDayEvenIfQuotaNotMet
@@ -54,10 +51,6 @@ public class SurfaceNetworkHandlerPatch
             // early out - we do not want to skip to 'quota failed' in InitSurface before players get to watch their video.
             AlwaysPlayFinalDay.Logger.LogInfo("AlwaysPlayFinalDay: Cancelled gameover, to allow players to watch their video on the final day when they didn't meet quota");
             return;
-        }
-        else
-        {
-            AlwaysPlayFinalDay.Logger.LogInfo("AlwaysPlayFinalDay: allow NextDay to continue");
         }
 
         orig(self);

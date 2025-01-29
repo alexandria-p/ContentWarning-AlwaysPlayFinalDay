@@ -35,7 +35,7 @@ If you would like to report any bugs, join the Content Warning modding discord a
 
 # Known bugs
 
-- None
+- No known bugs at this stage. Report bugs in the Content Warning discord, or on my GitHub.
 
 # Can I copy this mod's code? Can I contribute to this project?
 
